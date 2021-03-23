@@ -1,0 +1,107 @@
+:root {
+  --text-color: #f0f4f5;
+  --background-color: #263343;
+  --accent-color: #d49466;
+} /* 변수로 묶어서 생성함으로써 후에 한번에 색을 바꿀 수 있음 */
+
+body {
+  margin: 0; /* 박스 밖의 공간 없애기*/
+  font-family: "Source Sans Pro";
+}
+
+a {
+  text-decoration: none; /* 기본 앵커 태그의 기능 없애기*/
+  /*color: white;*/
+  color: var(--text-color);
+}
+
+.navbar {
+  display: flex; /* 박스들이 한줄로 정렬*/
+  justify-content: space-between; /* 같은 중심축을 기준으로 각 박스 사이에 공간 삽입*/
+  align-items: center; /* 수직을 기준으로 가운데 중심 맞추기 */
+  background-color: #263343;
+  padding: 8px 12px; /* 위아래는 8px, 양 옆은 12px 공간 */
+}
+
+.navbar_logo {
+  font-size: 24px;
+  /*color: white;*/
+  color: var(--text-color);
+}
+
+.navbar_logo i {
+  /*color: #d49466;*/ /* 로고이미지 주황색으로 바꾸기 */
+  color: var(--accent-color);
+}
+
+.navbar_menu {
+  display: flex; /* 메뉴 박스들을 한줄로 정렬 */
+  list-style: none; /* 리스트의 특징인 앞머리 기호들을 없앰 */
+  padding-left: 0; /* 왼쪽의 공간을 없앰으로써 리스트의 위치를 가운데로 옮김 */
+}
+
+.navbar_menu li {
+  padding: 8px 12px; /* 나중에 마우스를 올렸을때 클릭할 수 있는 background를 넓히기 위해서 패딩 사용*/
+  /* margin을 이용하면 박스 밖의 공간을 지정함으로써 선택 영역이 좁아지지만 padding은 안의 공간을 지정함으로써 선택영역 넓어짐 */
+}
+
+.navbar_menu li:hover {
+  background-color: #d49466;
+  border-radius: 4px; /* 박스 모서리 둥글게 표현 */
+}
+
+.navbar_icons {
+  list-style: none;
+  color: var(--text-color);
+  display: flex;
+  padding: 0;
+}
+
+.navbar_icons li {
+  padding: 8px 12px;
+}
+
+.navbar_toggleBtn {
+  display: none; /* 평소 창이 클때는 보이지 않음 */
+  position: absolute; /* 제일 위로 올라감 */
+  right: 32px; /* 오른쪽에서 32px 떨어진 곳에 위치 */
+  font-size: 24px;
+  color: #d49466;
+}
+
+@media screen and (max-width: 768px) {
+  /* 반응형 웹사이트 설정*/
+  .navbar {
+    flex-direction: column; /* column으로 바꿔줌으로써 아이템들이 수평이 아닌 수직으로 떨어짐 */
+    align-items: flex-start; /* 로고가 왼쪽에 정렬되도록 아이템들을 왼쪽 정렬 */
+    padding: 8px 12px;
+  }
+
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* 넓이를 100%로 설정하고 메뉴 item들을 중간으로 정렬 */
+  }
+
+  .navbar_menu li {
+    width: 100%;
+    text-align: center; /* 넓이가 넓어지면 text가 다시 왼쪽 정렬이 되기 때문에 text를 가운데 정렬을 따로 해준다 */
+  }
+
+  .navbar_icons {
+    display: none;
+    justify-content: center;
+    /* icon들의 flex-direction은 수평이기 때문에 justify-content: center를 이용하여 가운데 정렬 */
+    width: 100%;
+  }
+
+  .navbar_toggleBtn {
+    display: block; /* 창이 작아졌을때에만 바 아이콘이 보이도록 함 */
+  }
+
+  .navbar_menu.active,
+  .navbar_icons.active {
+    display: flex; /* menu와 icons가 active 상태일 때 = 클릭 상태일때는 flex박스로 보여줌 */
+  }
+}

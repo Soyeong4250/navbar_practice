@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <title>Nav bar</title>
+    <script src="https://kit.fontawesome.com/04e8ce1db2.js" crossorigin="anonymous"></script>
+    <script src = "main.js" defer></script> <!--모든 파일을 다 받을 때까지 html이 웹에서 표시되지 않는것을 방지하기 위해 defer을 추가-->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <i class="fas fa-laptop-code"></i>
+            <a href="">DreamCoding</a> <!--로고를 누르면 다시 홈화면으로 돌아갈수 있도록 앵커 태그 이용-->
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="">Wedding</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Bookings</a></li>
+        </ul>
+        <ul class="navbar_icons">
+            <li><i class="fas fa-comments"></i></li>
+            <li><i class="fab fa-instagram"></i></li>
+            <li><i class="fab fa-github"></i></li>
+        </ul>
+
+        <a href="#" class="navbar_toggleBtn">
+            <!-- 링크 창에 #를 넣음으로써 바아이콘 클릭시 창이 다시 뜨는걸 방지 (효과 x) -->
+            <i class="fas fa-bars"></i>
+        </a>
+    </nav>
+</body>
+</html>
